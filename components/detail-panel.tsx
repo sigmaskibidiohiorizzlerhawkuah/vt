@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { EmiratesCarousel } from "./emirates-carousel"
+import { Comments } from "./comments"
 import type React from "react"
 
 interface DetailPanelProps {
@@ -89,6 +90,10 @@ export function DetailPanel({ topic }: DetailPanelProps) {
             <p className="text-xs text-muted-foreground mt-3">Editor-In-Chief: Kendy Gisa</p>
           </CardContent>
         </Card>
+
+        <div>
+          <Comments articleSlug="dubai" />
+        </div>
       </div>
     </ScrollArea>
   )
