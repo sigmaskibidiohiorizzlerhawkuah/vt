@@ -22,9 +22,14 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Env
+# Environment variables
 .env*
 !.env.example
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
 # Vercel
 .vercel/

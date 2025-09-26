@@ -47,7 +47,7 @@ export async function sendCommentNotification({
     `
 
     await resend.emails.send({
-      from: "Vocabulary Today <noreply@yourdomain.com>", // Replace with your verified domain
+      from: process.env.RESEND_FROM || "onboarding@resend.dev", // use sandbox sender by default
       to: [process.env.ADMIN_EMAIL],
       subject,
       html: htmlContent,

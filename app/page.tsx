@@ -119,10 +119,16 @@ export default function Home() {
         <div className="p-6 border-b">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded flex items-center justify-center">
+              <button
+                type="button"
+                aria-label="Go to home"
+                title="Home"
+                onClick={() => setSelectedTopic(null)}
+                className="w-8 h-8 rounded flex items-center justify-center hover:opacity-80 transition"
+              >
                 <img src="/vt-logo-white.png" alt="VT Logo" className="w-6 h-6 object-contain dark:block hidden" />
                 <img src="/vt-logo.png" alt="VT Logo" className="w-6 h-6 object-contain dark:hidden block" />
-              </div>
+              </button>
               <ThemeToggle />
             </div>
           </div>
