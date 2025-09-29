@@ -4,6 +4,9 @@ import { cookies } from "next/headers"
 const GUEST_COOKIE = "vt_guest_token"
 const ONE_YEAR = 60 * 60 * 24 * 365
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const adminToken = process.env.ADMIN_GUEST_TOKEN
