@@ -54,7 +54,7 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
         setUsername(data.username ?? null)
         setContent("")
         setReplyToId(null)
-        setComments((prev) => [...prev, data.comment])
+        setComments((prev) => [data.comment, ...prev])
       } else {
         console.error(data.error || "Failed to post comment")
       }
@@ -76,23 +76,7 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
     const isCreatorUsername = (name: string) => Boolean(isAdmin && username && name === username)
     const children = items.filter((i) => i.parentId === parentId)
 
-    // Always show Creator replies, hide others unless expanded
-    const creatorReplies = children.filter((c) => isCreatorUsername(c.anonUsername))
-    const otherReplies = children.filter((c) => !isCreatorUsername(c.anonUsername))
-    
-    let visibleChildren = creatorReplies // Always show Creator replies
-    if (parentId !== null) {
-      const parent = items.find((i) => i.id === parentId)
-      const parentIsCreator = parent ? isCreatorUsername(parent.anonUsername) : false
-      const parentExpanded = expandedReplies.has(parentId) || parentIsCreator
-      if (parentExpanded) {
-        visibleChildren = [...creatorReplies, ...otherReplies] // Show all when expanded
-      }
-    } else {
-      visibleChildren = children // Top-level comments always show all
-    }
-
-    return visibleChildren.flatMap((c) => {
+    return children.flatMap((c) => {
       const isCreatorComment = isCreatorUsername(c.anonUsername)
       const childReplies = items.filter((item) => item.parentId === c.id)
       const nonCreatorReplies = childReplies.filter((r) => !isCreatorUsername(r.anonUsername))
@@ -133,7 +117,7 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
                 })}
                 className="text-xs text-muted-foreground hover:underline"
               >
-                {isExpanded ? "Hide replies" : `Show ${childReplies.length} replies`}
+                {isExpanded ? "Hide replies" : `Show ${nonCreatorReplies.length} replies`}
               </button>
             )}
           </div>
@@ -169,9 +153,8 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
         </div>
       )
 
-      const replies = (expandedReplies.has(c.id) || isCreatorComment)
-        ? renderThread(items, c.id, depth + 1)
-        : []
+      // Show replies if expanded OR if this is a Creator comment
+      const replies = isExpanded ? renderThread(items, c.id, depth + 1) : []
       return [node, ...replies]
     })
   }
