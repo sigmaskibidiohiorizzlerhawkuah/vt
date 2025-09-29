@@ -94,8 +94,20 @@ export async function GET(req: Request) {
   const comments = await prisma.comment.findMany({
     where: { articleId: article.id },
     orderBy: { createdAt: "desc" },
+    include: {
+      guest: {
+        select: { token: true }
+      }
+    }
   })
-  return NextResponse.json({ comments, currentUsername, isAdminUser })
+
+  // Add isCreator flag to each comment
+  const commentsWithCreatorFlag = comments.map(comment => ({
+    ...comment,
+    isCreator: !!process.env.ADMIN_GUEST_TOKEN && comment.guest.token === process.env.ADMIN_GUEST_TOKEN
+  }))
+
+  return NextResponse.json({ comments: commentsWithCreatorFlag, currentUsername, isAdminUser })
 }
 
 export async function POST(req: Request) {

@@ -8,6 +8,7 @@ interface CommentItem {
   content: string
   createdAt: string
   parentId: number | null
+  isCreator?: boolean
 }
 
 export function Comments({ articleSlug }: { articleSlug: string }) {
@@ -73,13 +74,12 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
   }
 
   function renderThread(items: CommentItem[], parentId: number | null = null, depth = 0): JSX.Element[] {
-    const isCreatorUsername = (name: string) => Boolean(isAdmin && username && name === username)
     const children = items.filter((i) => i.parentId === parentId)
 
     return children.flatMap((c) => {
-      const isCreatorComment = isCreatorUsername(c.anonUsername)
+      const isCreatorComment = c.isCreator || false
       const childReplies = items.filter((item) => item.parentId === c.id)
-      const nonCreatorReplies = childReplies.filter((r) => !isCreatorUsername(r.anonUsername))
+      const nonCreatorReplies = childReplies.filter((r) => !r.isCreator)
       
       // For replies: show if expanded OR if this is a Creator comment
       // For top-level comments: show if expanded OR if this is a Creator comment
