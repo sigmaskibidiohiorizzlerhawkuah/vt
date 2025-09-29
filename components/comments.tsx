@@ -82,8 +82,8 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
       const nonCreatorReplies = childReplies.filter((r) => !isCreatorUsername(r.anonUsername))
       
       // For replies: show if expanded OR if this is a Creator comment
-      // For top-level comments: always show all replies
-      const shouldShowReplies = parentId === null || expandedReplies.has(c.id) || isCreatorComment
+      // For top-level comments: show if expanded OR if this is a Creator comment
+      const shouldShowReplies = expandedReplies.has(c.id) || isCreatorComment
 
       const node = (
         <div key={c.id} className="rounded-md border p-3" style={{ marginLeft: depth * 16 }}>
@@ -109,7 +109,7 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
             >
               Reply
             </button>
-            {nonCreatorReplies.length > 0 && !isCreatorComment && (
+            {childReplies.length > 0 && (
               <button
                 type="button"
                 onClick={() => setExpandedReplies((prev) => {
@@ -120,7 +120,7 @@ export function Comments({ articleSlug }: { articleSlug: string }) {
                 })}
                 className="text-xs text-muted-foreground hover:underline"
               >
-                {expandedReplies.has(c.id) ? `Hide ${childReplies.length} replies` : `Show ${childReplies.length} replies`}
+                {expandedReplies.has(c.id) ? `Hide (${childReplies.length}) replies` : `View (${childReplies.length}) replies`}
               </button>
             )}
           </div>
