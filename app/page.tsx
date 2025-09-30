@@ -233,22 +233,31 @@ export default function Home() {
         <div className="flex-1 p-6">
           <div className="space-y-4">
             <div className="text-center p-8 text-muted-foreground">
-              <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
-              <div className="min-h-[120px] flex items-center justify-center">
-                <p className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out">
-                  {quotes[currentJokeIndex]}
-                </p>
-              </div>
-              <div className="flex justify-center gap-1 mt-4">
-                {quotes.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentJokeIndex ? "bg-primary" : "bg-muted-foreground/30"
-                    }`}
-                  />
-                ))}
-              </div>
+              {!selectedTopic ? (
+                <div className="py-6">
+                  <div className="text-5xl mb-3 animate-bounce">👋🏽</div>
+                  <h3 className="font-medium">Enjoy Your Read!</h3>
+                </div>
+              ) : (
+                <>
+                  <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
+                  <div className="min-h-[120px] flex items-center justify-center">
+                    <p className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out">
+                      {quotes[currentJokeIndex]}
+                    </p>
+                  </div>
+                  <div className="flex justify-center gap-1 mt-4">
+                    {quotes.map((_, index) => (
+                      <div
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentJokeIndex ? "bg-primary" : "bg-muted-foreground/30"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
