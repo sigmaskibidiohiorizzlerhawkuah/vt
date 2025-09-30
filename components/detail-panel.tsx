@@ -8,6 +8,7 @@ import type React from "react"
 
 interface DetailPanelProps {
   topic: {
+    id: string
     title: string
     image: string
     description: string | React.ReactNode
@@ -19,9 +20,11 @@ interface DetailPanelProps {
       text: string | React.ReactNode
       image?: string
     }
-    category: string
+    category: string | string[]
     readTime: string
     publishDate: string
+    carouselImages?: string[]
+    carouselLabels?: string[]
   } | null
 }
 
@@ -40,7 +43,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
   return (
     <ScrollArea className="h-full">
       <div className="p-6 space-y-6">
-        <EmiratesCarousel category={topic.category} readTime={topic.readTime} />
+        <EmiratesCarousel category={topic.category} readTime={topic.readTime} images={topic.carouselImages} labels={topic.carouselLabels} />
 
         <div>
           <h1 className="text-2xl font-bold mb-3 text-balance">{topic.title}</h1>
@@ -92,7 +95,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
         </Card>
 
         <div>
-          <Comments articleSlug="dubai" />
+          <Comments articleSlug={topic.id} />
         </div>
       </div>
     </ScrollArea>

@@ -85,6 +85,85 @@ const topics = [
       ),
     },
   },
+  {
+    id: "blood-falls",
+    title: "BLOOD FALLS, ANTARCTICA",
+    image: "/blood-falls-antarctica-1.jpg",
+    category: ["Physical Geography", "Natural Science"],
+    readTime: "2 min read",
+    publishDate: "October 1, 2025",
+    carouselImages: [
+      "/blood-falls-antarctica-1.jpg",
+      "/blood-falls-antarctica-2.jpg",
+      "/blood-falls-antarctica-3.jpg",
+      "/blood-falls-antarctica-4.jpg",
+    ],
+    carouselLabels: [
+      "Blood Falls, Antarctica",
+      "Taylor Glacier seep, East Antarctica",
+      "McMurdo Dry Valleys ice face",
+      "Iron-rich brine outflow",
+    ],
+    description: (
+      <>
+        BLOOD FALLS, ANTARCTICA
+        <br />
+        <br />
+        <span className="text-xs inline-block bg-muted px-2 py-1 rounded">
+          <strong>(brine)</strong>: water strongly impregnated with salt.
+        </span>
+        <br />
+        <br />
+        Many people think Antarctica is just a frozen, lifeless wasteland — endless white ice and snow as far as the
+        eye can see. But then there’s Blood Falls, a strange waterfall that looks like the ice itself is bleeding.
+        Worry not, tho… it’s not real blood. The deep red flow comes from iron-rich water seeping out of the Taylor
+        Glacier and rusting as soon as it touches the air, creating one of the most bizarre sights on the planet.
+        <br />
+        <br />
+        <strong>WHAT IS BLOOD FALLS?</strong>
+        <br />
+        Blood Falls is a crimson-red waterfall on the edge of the Taylor Glacier in East Antarctica's McMurdo Dry
+        Valleys. Its shocking color comes from iron-rich saltwater that has been trapped beneath the glacier for
+        millions of years.
+        <br />
+        <br />
+        <strong>WHY IS THE WATER RED?</strong>
+        <br />
+        The water originates from an ancient hypersaline lake that was sealed off by the advancing Taylor Glacier
+        roughly 1.5 to 5 million years ago. Because of its extremely high salt content, the brine never freezes, even
+        under Antarctica’s brutal cold.
+        <br />
+        <br />
+        When this brine finally seeps out and meets oxygen in the air, the iron inside oxidizes — basically, it rusts
+        — turning the water a dramatic shade of red.
+        <br />
+        <br />
+        ⇾ Early explorers initially suspected the color was caused by red algae, but this theory was later disproven by
+        chemical analysis.
+      </>
+    ),
+    facts: [
+      {
+        text: (
+          <>
+            The <strong>brine</strong> at <strong>Blood Falls</strong> is about <strong>2–3 times saltier than normal
+            seawater</strong> and packed with dissolved iron.
+          </>
+        ),
+        publishDate: "",
+      },
+      {
+        text: (
+          <>
+            Despite having <strong>no sunlight</strong> and <strong>almost no oxygen</strong>, <strong>microbes</strong>
+            still live in this <strong>extreme environment</strong>. They survive through <strong>chemosynthesis</strong>,
+            drawing energy from iron and sulfur compounds in the water instead of light.
+          </>
+        ),
+        publishDate: "",
+      },
+    ],
+  },
 ]
 
 const jokes = [

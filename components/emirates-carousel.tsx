@@ -4,8 +4,10 @@ import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 
 interface EmiratesCarouselProps {
-  category: string
+  category: string | string[]
   readTime: string
+  images?: string[]
+  labels?: string[]
 }
 
 const emirates = [
@@ -39,36 +41,63 @@ const emirates = [
   },
 ]
 
-export function EmiratesCarousel({ category, readTime }: EmiratesCarouselProps) {
+export function EmiratesCarousel({ category, readTime, images, labels }: EmiratesCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [categoryIndex, setCategoryIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % emirates.length)
+      const slideCount = (images?.length ?? 0) > 0 ? images!.length : emirates.length
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slideCount)
     }, 3000) // Change image every 3 seconds
 
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    if (Array.isArray(category) && category.length > 1) {
+      const interval = setInterval(() => {
+        setCategoryIndex((prev) => (prev + 1) % category.length)
+      }, 2500)
+      return () => clearInterval(interval)
+    }
+  }, [category])
+
   return (
     <div className="relative">
       <div className="relative overflow-hidden rounded-lg">
-        <img
-          src={emirates[currentIndex].image || "/placeholder.svg"}
-          alt={`${emirates[currentIndex].name} - UAE Emirate`}
-          className="w-full h-48 object-cover transition-opacity duration-500"
-        />
+        {images && images.length > 0 ? (
+          <img
+            src={images[currentIndex] || "/placeholder.svg"}
+            alt={labels?.[currentIndex] || "Slide"}
+            className="w-full h-48 object-cover transition-opacity duration-500"
+          />
+        ) : (
+          <img
+            src={emirates[currentIndex].image || "/placeholder.svg"}
+            alt={`${emirates[currentIndex].name} - UAE Emirate`}
+            className="w-full h-48 object-cover transition-opacity duration-500"
+          />
+        )}
 
         {/* Emirate name overlay */}
-        <div className="absolute bottom-4 left-4">
-          <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
-            {emirates[currentIndex].name}
-          </Badge>
-        </div>
+        {(!images || images.length === 0) ? (
+          <div className="absolute bottom-4 left-4">
+            <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
+              {emirates[currentIndex].name}
+            </Badge>
+          </div>
+        ) : (
+          <div className="absolute bottom-4 left-4">
+            <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
+              {Array.isArray(category) ? category[categoryIndex] : category}
+            </Badge>
+          </div>
+        )}
 
         {/* Progress indicators */}
         <div className="absolute bottom-4 right-4 flex space-x-1">
-          {emirates.map((_, index) => (
+          {(images && images.length > 0 ? images : emirates).map((_: any, index: number) => (
             <div
               key={index}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
@@ -79,10 +108,7 @@ export function EmiratesCarousel({ category, readTime }: EmiratesCarouselProps) 
         </div>
       </div>
 
-      {/* Category and read time badges */}
-      <div className="absolute top-4 left-4">
-        <Badge variant="secondary">{category}</Badge>
-      </div>
+      {/* Read time badge */}
       <div className="absolute top-4 right-4">
         <Badge variant="outline" className="bg-background/80 backdrop-blur-sm">
           {readTime}
