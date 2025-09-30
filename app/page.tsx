@@ -176,17 +176,35 @@ const jokes = [
   "Sleeping comes so naturally to me, I could do it with my eyes closed.",
 ]
 
+const pickupLines = [
+  "I always thought happiness started with an \"H\" but it looks like it starts with \"U\".",
+  "If X + U = 15, then I would assume X = 5 because U is definitely a 10",
+  "Do you have a name? Or can I call you mine?",
+  "On a scale of 1 to 10, you're a 9...because I'm the 1 you need.",
+  "They say nothing lasts forever. Want to be my nothing?",
+  "I think something's wrong with my phone. Cud you call it and see if it works?",
+  "No pen, no paper but you still draw my attention.",
+  "I don't even play cards yet I somehow drew the Queen of Hearts.",
+  "Hey, how was heaven when you left it? ",
+]
+
 export default function Home() {
   const [selectedTopic, setSelectedTopic] = useState<(typeof topics)[0] | null>(null)
   const [currentJokeIndex, setCurrentJokeIndex] = useState(0)
 
+  const isBloodFalls = selectedTopic?.id === "blood-falls"
+  const quotes = isBloodFalls ? pickupLines : jokes
+
+  useEffect(() => {
+    setCurrentJokeIndex(0)
+  }, [isBloodFalls])
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentJokeIndex((prev) => (prev + 1) % jokes.length)
-    }, 5000) // increased from 3000ms to 5000ms to slow down auto-scroll
-
+      setCurrentJokeIndex((prev) => (prev + 1) % quotes.length)
+    }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [quotes.length])
 
   return (
     <div className="h-screen flex bg-background">
@@ -215,14 +233,14 @@ export default function Home() {
         <div className="flex-1 p-6">
           <div className="space-y-4">
             <div className="text-center p-8 text-muted-foreground">
-              <h3 className="font-medium mb-4">HAHAHA, sOo fUnNyYYyY…😒</h3>
+              <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
               <div className="min-h-[120px] flex items-center justify-center">
                 <p className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out">
-                  {jokes[currentJokeIndex]}
+                  {quotes[currentJokeIndex]}
                 </p>
               </div>
               <div className="flex justify-center gap-1 mt-4">
-                {jokes.map((_, index) => (
+                {quotes.map((_, index) => (
                   <div
                     key={index}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
