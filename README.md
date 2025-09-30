@@ -18,13 +18,16 @@ A polished Next.js 14 App Router application that surfaces bite-sized facts with
 
 ## Features
 - Theme-aware UI (light/dark) with one-click toggle
-- Emirates carousel with responsive images
-- **Guest commenting system** with context-bound anonymous identities
+- Carousel with per-topic images and labels
+- Topics sidebar and detail panel with per-topic content
+- Dubai article + Blood Falls, Antarctica article (2 min read)
+- **Guest commenting system** with context-bound anonymous identities (per article)
 - **Emoji reactions** with optimistic updates
-- **Nested replies** with smart visibility (Creator replies always visible)
-- **Admin/Creator badges** for content creators
+- **Nested replies** with View/Hide (Creator replies always visible)
+- **Admin/Creator badges** visible to all users (server-verified)
+- Email notifications (Resend) for new comments/replies
 - Modular component architecture (cards, panels, hooks)
-- Favicon and metadata configured via App Router `metadata`
+- Favicon and metadata via App Router `metadata`
 - TypeScript-first setup with sensible defaults
 
 ## Demo
@@ -45,11 +48,16 @@ pnpm install
 ```
 2. Set up environment variables
 ```bash
-# Copy the example environment file
-cp .env.example .env
+# Local development (SQLite)
+DATABASE_URL="file:./prisma/dev.db"
 
-# Edit .env and set your database URL
-DATABASE_URL="file:./dev.db"
+# Admin cookie token (any unique string/UUID)
+ADMIN_GUEST_TOKEN="your-admin-uuid-here"
+
+# Email (optional)
+RESEND_API_KEY="re_xxxxxxxxxx"
+ADMIN_EMAIL="your-email@example.com"
+RESEND_FROM="onboarding@resend.dev"
 ```
 3. Set up the database
 ```bash
@@ -78,6 +86,14 @@ pnpm dev
    ```
 4. Comments and replies will now send email notifications to your inbox
 
+### Images used by the Blood Falls article
+Place these images in `public/` (exact names):
+- `blood-falls-antarctica-1.jpg` (also used for series card)
+- `blood-falls-antarctica-2.jpg`
+- `blood-falls-antarctica-3.jpg`
+- `blood-falls-antarctica-4.jpg`
+Recommended: ~1200×600 JPG or WebP.
+
 ## Project structure
 ```text
 app/
@@ -85,13 +101,15 @@ app/
     comments/          # Comments API (GET/POST)
     reactions/         # Emoji reactions API
     admin/             # Admin utilities
+      set-cookie/      # Hidden route to set ADMIN_GUEST_TOKEN cookie
+    test-email/        # Optional: test Resend integration
   globals.css          # App-level global styles (App Router)
   layout.tsx           # Root layout, fonts, ThemeProvider, metadata, icons
   page.tsx             # Home page (/)
 components/
   comments.tsx         # Guest commenting system with reactions
   detail-panel.tsx     # Detail slide-over/panel
-  emirates-carousel.tsx# Image/content carousel
+  emirates-carousel.tsx# Image/content carousel (supports per-topic images & labels)
   theme-provider.tsx   # Theme context provider (next-themes)
   theme-toggle.tsx     # Theme toggle button
   topic-card.tsx       # Card component for topics/facts
@@ -130,9 +148,37 @@ public/
   3. Vercel auto-detects Next.js and deploys
 - Notes: `next.config.mjs` ignores type and ESLint errors during builds and uses unoptimized images (no Image Optimization) by default.
 
+### Vercel Postgres setup
+1. Create a Vercel Postgres database (choose Prisma Postgres template if shown)
+2. In Vercel Project → Settings → Environment Variables, set:
+   - `DATABASE_URL` = your Vercel Postgres URL
+   - `ADMIN_GUEST_TOKEN`, `RESEND_API_KEY`, `ADMIN_EMAIL`, `RESEND_FROM` as needed
+3. Build settings: run Prisma migrations before build (see `vercel-build.sh` if used) or configure "Install Command"/"Build Command" accordingly
+4. If a route uses `cookies()`/`headers()`, ensure it is dynamic. Example: `app/api/admin/set-cookie/route.ts` exports `export const dynamic = 'force-dynamic'`.
+
+### Resetting data (production DB)
+Use psql or a Postgres UI to clear tables:
+```sql
+DELETE FROM "CommentReaction";
+DELETE FROM "Comment";
+DELETE FROM "GuestArticleName";
+DELETE FROM "Guest";
+-- Optional: DELETE FROM "Article";
+```
+
 ## Contributing
 - Fork the repo, create a feature branch, commit with conventional messages (e.g., `feat: add topic filters`), and open a PR.
 - Keep code clear, typed, and consistent with the existing style.
 
 ## License
 MIT © Contributors
+
+---
+
+## Polishing suggestions (GitHub-worthy)
+- Create `.env.example` with placeholder keys to simplify onboarding
+- Compress large images in `public/` (JPG/WebP) for faster loads
+- Consider `next/image` for automatic responsive images (if you add domains/config)
+- Add `format` script: `"format": "prettier --write ."`
+- Add basic CI (GitHub Actions) for `pnpm install`, `pnpm build` to catch issues early
+- Add OG metadata/social cards via `app/og` for richer link previews
