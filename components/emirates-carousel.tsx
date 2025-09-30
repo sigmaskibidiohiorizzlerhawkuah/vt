@@ -81,19 +81,12 @@ export function EmiratesCarousel({ category, readTime, images, labels }: Emirate
         )}
 
         {/* Emirate name overlay */}
-        {(!images || images.length === 0) ? (
-          <div className="absolute bottom-4 left-4">
-            <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
-              {emirates[currentIndex].name}
-            </Badge>
-          </div>
-        ) : (
-          <div className="absolute bottom-4 left-4">
-            <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
-              {Array.isArray(category) ? category[categoryIndex] : category}
-            </Badge>
-          </div>
-        )}
+        {/* Top-left: Alternating category label */}
+        <div className="absolute top-4 left-4">
+          <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
+            {Array.isArray(category) ? category[categoryIndex] : category}
+          </Badge>
+        </div>
 
         {/* Progress indicators */}
         <div className="absolute bottom-4 right-4 flex space-x-1">

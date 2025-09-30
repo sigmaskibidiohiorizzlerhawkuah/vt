@@ -106,11 +106,8 @@ const topics = [
     ],
     description: (
       <>
-        BLOOD FALLS, ANTARCTICA
-        <br />
-        <br />
         <span className="text-xs inline-block bg-muted px-2 py-1 rounded">
-          <strong>(brine)</strong>: water strongly impregnated with salt.
+          <strong>brine</strong>: water strongly impregnated with salt.
         </span>
         <br />
         <br />
@@ -155,8 +152,8 @@ const topics = [
       {
         text: (
           <>
-            Despite having <strong>no sunlight</strong> and <strong>almost no oxygen</strong>, <strong>microbes</strong>
-            still live in this <strong>extreme environment</strong>. They survive through <strong>chemosynthesis</strong>,
+            Despite having <strong>no sunlight</strong> and <strong>almost no oxygen</strong>, <strong>microbes</strong> still
+            live in this <strong>extreme environment</strong>. They survive through <strong>chemosynthesis</strong>,
             drawing energy from iron and sulfur compounds in the water instead of light.
           </>
         ),
