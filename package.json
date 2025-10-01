@@ -11,7 +11,8 @@
     "prisma": "prisma",
     "db:push": "prisma db push",
     "db:seed": "ts-node prisma/seed.ts",
-    "db:migrate": "prisma migrate deploy"
+    "db:migrate": "prisma migrate deploy",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
