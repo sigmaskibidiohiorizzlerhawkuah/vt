@@ -9,14 +9,16 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" })
 export const metadata: Metadata = {
   title: "Vocabulary Today - Random Facts",
   description: "Discover fascinating facts from around the world",
-    generator: 'v0.app',
-    icons: {
-      icon: [
-        { url: '/vt-logo.png', type: 'image/png' }
-      ],
-      shortcut: ['/vt-logo.png'],
-      apple: ['/vt-logo.png']
-    }
+  generator: 'v0.app',
+  keywords: ['facts', 'geography', 'science', 'education', 'comments'],
+  authors: [{ name: 'Vocabulary Today' }],
+  icons: {
+    icon: [
+      { url: '/vt-logo.png', type: 'image/png' }
+    ],
+    shortcut: ['/vt-logo.png'],
+    apple: ['/vt-logo.png']
+  }
 }
 
 export default function RootLayout({
