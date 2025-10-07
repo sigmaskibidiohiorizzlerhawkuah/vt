@@ -174,15 +174,13 @@ const topics = [
       "/gates-of-hell-2.jpg",
       "/water-crater.jpg",
       "/mud-crater.png",
-      "/george.jpg",
     ],
     carouselLabels: [
       "Darvaza Gas Crater, Karakum Desert",
       "Darvaza Gas Crater (close-up)",
       "Darvaza Gas Crater at night",
-      "Water Crater (gas bubbling through water)",
-      "Mud Crater (gas churning mud)",
-      "George Kourounis descent (2013)",
+      "Water Crater",
+      "Mud Crater",
     ],
     description: (
       <>
@@ -265,6 +263,7 @@ const topics = [
       },
     ],
     didYouKnow: {
+      image: "/george.jpg",
       text: (
         <>
           In 2013, <strong>George Kourounis</strong> became the first person to set foot at the bottom of the crater; he was

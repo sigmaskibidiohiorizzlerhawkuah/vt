@@ -95,14 +95,20 @@ export function EmiratesCarousel({ category, readTime, images, labels }: Emirate
           </Badge>
         </div>
 
-        {/* Bottom-left: Emirate name only for default carousel (no custom images) */}
-        {(!images || images.length === 0) && (
+        {/* Bottom-left: label - emirate name for default carousel OR provided label for custom images */}
+        {(!images || images.length === 0) ? (
           <div className="absolute bottom-4 left-4">
             <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
               {emirates[currentIndex].name}
             </Badge>
           </div>
-        )}
+        ) : labels && labels[currentIndex] ? (
+          <div className="absolute bottom-4 left-4">
+            <Badge variant="default" className="bg-black/70 text-white backdrop-blur-sm">
+              {labels[currentIndex]}
+            </Badge>
+          </div>
+        ) : null}
 
         {/* Progress indicators */}
         <div className="absolute bottom-4 right-4 flex space-x-1">
