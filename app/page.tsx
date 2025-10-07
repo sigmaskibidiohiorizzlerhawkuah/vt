@@ -165,7 +165,7 @@ const topics = [
     id: "gates-of-hell",
     title: "GATES OF HELL! 😱",
     detailTitle: "Gates Of Hell: DARVAZA GAS CRATER😶",
-    image: "/gates-of-hell-card.jpg",
+    image: "/gates-of-hell.jpg",
     category: ["Physical Geography", "Geology"],
     readTime: "3 min read",
     publishDate: "October 8, 2025",
@@ -173,11 +173,15 @@ const topics = [
       "/gates-of-hell-1.jpg",
       "/gates-of-hell-2.jpg",
       "/gates-of-hell-3.jpg",
+      "/mud-crater.jpg",
+      "/water-crater.jpg",
     ],
     carouselLabels: [
       "Darvaza Gas Crater at dusk",
       "Gate of Hell night flames",
       "Karakum Desert crater rim",
+      "Mud Crater (natural gas churning up mud)",
+      "Water Crater (gas bubbling through water)",
     ],
     description: (
       <>
@@ -260,7 +264,7 @@ const topics = [
       },
     ],
     didYouKnow: {
-      image: "/george-kourounis-darvaza.jpg",
+      image: "/george.jpg",
       text: (
         <>
           In 2013, <strong>George Kourounis</strong> became the first person to set foot at the bottom of the crater; he was
