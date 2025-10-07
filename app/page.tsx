@@ -184,8 +184,12 @@ const topics = [
     ],
     description: (
       <>
+        <h2 className="text-base font-semibold mb-2">DARVAZA GAS CRATER</h2>
         <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
           <strong>cavern</strong>: a large cave or chamber in a cave.
+        </span>
+        <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
+          <strong>coliseum</strong>: a large amphitheatre (= a circular or oval area with seats around it for watching sports and entertainments)
         </span>
         <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
           <strong>crater</strong>: a large bowl-shaped cavity in the ground or on a celestial object, typically one caused by an explosion or the impact of a meteorite.
@@ -217,7 +221,7 @@ const topics = [
         for over 50 years and has become a permanent feature of the desert landscape. There are no accurate records of the
         event, but the fact is that this gas cavern has been burning since then.
         <br />
-        <br />⇾ The flames that burn within the crater are created by the combustion of <strong>methane</strong> gas. Methane is an
+        <br />⇾ The flames that burn within the crater are created by the combustion of methane gas. <strong>Methane</strong> is an
         odorless and colorless gas that’s highly flammable, and it’s released naturally as a byproduct of the decomposition
         of organic matter. The methane in the Darvaza Gas Crater is thought to have been trapped in a natural gas pocket
         beneath the desert floor, and the drilling accident released it into the atmosphere.
