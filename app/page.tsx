@@ -184,7 +184,7 @@ const topics = [
     ],
     description: (
       <>
-        <h2 className="text-base font-semibold mb-2">DARVAZA GAS CRATER</h2>
+        <h2 className="text-base font-semibold mb-2 text-white">DARVAZA GAS CRATER</h2>
         <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
           <strong>cavern</strong>: a large cave or chamber in a cave.
         </span>
@@ -337,9 +337,9 @@ export default function Home() {
   }, [quotes.length])
 
   return (
-    <div className="h-screen flex bg-background">
+    <div className="min-h-screen flex flex-col lg:h-screen lg:flex-row bg-background">
       {/* First Column - VOCABULARY TODAY */}
-      <div className="w-80 border-r bg-card flex flex-col">
+      <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -398,7 +398,7 @@ export default function Home() {
       </div>
 
       {/* Second Column - SERIES */}
-      <div className="w-96 border-r bg-card flex flex-col">
+      <div className="w-full lg:w-96 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <h2 className="text-xl font-semibold">SERIES</h2>
           <p className="text-sm text-muted-foreground mt-1">All featured topics</p>
@@ -423,7 +423,7 @@ export default function Home() {
       </div>
 
       {/* Third Column - Detail Panel */}
-      <div className="flex-1 bg-background">
+      <div className="flex-1 bg-background w-full">
         <div className="h-full">
           <DetailPanel topic={selectedTopic} />
         </div>
