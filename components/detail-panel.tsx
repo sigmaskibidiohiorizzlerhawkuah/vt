@@ -73,7 +73,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
                 <img
                   src={topic.didYouKnow.image || "/placeholder.svg"}
                   alt="Instagram post screenshot"
-                  className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                  className="w-full max-w-md mx-auto rounded-lg shadow-lg object-contain max-h-72"
                 />
               </div>
             )}
