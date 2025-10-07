@@ -161,6 +161,123 @@ const topics = [
       },
     ],
   },
+  {
+    id: "gates-of-hell",
+    title: "GATES OF HELL!😱",
+    image: "/placeholder.svg",
+    category: ["Physical Geography", "Geology"],
+    readTime: "3 min read",
+    publishDate: "October 8, 2025",
+    carouselImages: [
+      "/placeholder.svg",
+    ],
+    carouselLabels: [
+      "Darvaza Gas Crater, Karakum Desert",
+    ],
+    description: (
+      <>
+        <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
+          <strong>cavern</strong>: a large cave or chamber in a cave.
+        </span>
+        <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
+          <strong>crater</strong>: a large bowl-shaped cavity in the ground or on a celestial object, typically one caused by an explosion or the impact of a meteorite.
+        </span>
+        <span className="text-xs inline-block bg-muted px-2 py-1 rounded mb-2">
+          <strong>geologist</strong>: a scientist who studies the structure, composition, and history of Earth.
+        </span>
+        <br />
+        <br />
+        Think deserts are boring? Think again. In the heart of Turkmenistan, there’s a massive fiery pit known as the
+        <strong> Darvaza Gas Crater</strong> — or, as locals like to call it, the <strong>Gate of Hell</strong>. This
+        thing has been burning non-stop since the 1970s, turning the quiet desert nights into a scene that looks straight
+        out of a fantasy movie.
+        <br />
+        <br />
+        <strong>WHAT IS DARVAZA GAS CRATER?</strong>
+        <br />
+        The Darvaza gas crater, also known as the <strong>Door to Hell</strong> or <strong>Gates of Hell</strong>, officially the
+        <strong> Shining of Karakum</strong>, is a burning natural gas field collapsed into a <strong>cavern</strong> near
+        Darvaza, Turkmenistan. The site has been burning continuously since 1971, when it was accidentally ignited during a
+        Soviet drilling operation.
+        <br />
+        <br />
+        <strong>THE HISTORY BEHIND THE CRATER</strong>
+        <br />
+        In 1971, Soviet <strong>geologists</strong> had been drilling for gas at the site of a cavern. The cavern
+        collapsed, releasing the gas. Fearing the release of toxic gases, the geologists set the crater on fire, hoping
+        that the flames would burn off the gas within a few days or weeks. However, the fire has been burning continuously
+        for over 50 years and has become a permanent feature of the desert landscape. There are no accurate records of the
+        event, but the fact is that this gas cavern has been burning since then.
+        <br />
+        <br />⇾ The flames that burn within the crater are created by the combustion of <strong>methane</strong> gas. Methane is an
+        odorless and colorless gas that’s highly flammable, and it’s released naturally as a byproduct of the decomposition
+        of organic matter. The methane in the Darvaza Gas Crater is thought to have been trapped in a natural gas pocket
+        beneath the desert floor, and the drilling accident released it into the atmosphere.
+      </>
+    ),
+    facts: [
+      {
+        text: (
+          <>
+            <strong>Darvaza</strong> from Turkmen literally means <strong>"Gate"</strong>.
+          </>
+        ),
+        publishDate: "",
+      },
+      {
+        text: (
+          <>
+            The <strong>Darvaza Gas Crater</strong> is located in the <strong>Karakum Desert</strong> of
+            <strong> Turkmenistan</strong>. Karakum desert makes up around <strong>70%</strong> of the country.
+          </>
+        ),
+        publishDate: "",
+      },
+      {
+        text: (
+          <>
+            The <strong>diameter</strong> of the crater is <strong>69 meters</strong> and the <strong>depth</strong> is
+            <strong> 30</strong>.
+          </>
+        ),
+        publishDate: "",
+      },
+      {
+        text: (
+          <>
+            There are also <strong>two</strong> other similar big craters: a <strong>"Water Crater"</strong> where
+            <strong> gas bubbles through water</strong> and a <strong>"Mud Crater"</strong> where
+            <strong> natural gas churns up mud</strong>. Though not as impressive as the Darvaza crater, you can still visit
+            them on the way.
+          </>
+        ),
+        publishDate: "",
+      },
+    ],
+    didYouKnow: {
+      text: (
+        <>
+          In 2013, <strong>George Kourounis</strong> became the first person to set foot at the bottom of the crater; he was
+          gathering soil samples for the Extreme Microbiome Project. The descent was sponsored by National Geographic and
+          featured in an episode of the National Geographic Channel series <em>Die Trying</em>.
+          <br />
+          <br />
+          <em>
+            "I describe it as a coliseum of fire—just everywhere you look it's thousands of these small fires. The sound was
+            like that of a jet engine, this roaring, high-pressure, gas-burning sound. And there was no smoke. It burns very
+            cleanly, so there's nothing to obscure your view. You can just see every little lick of flame."
+          </em>
+          <br />
+          <span className="font-bold">~ George Kourounis, Interview with National Geographic</span>
+          <br />
+          <br />
+          Kourounis used a custom-made Kevlar harness and multiple Technora ropes attached to a full-body aluminized suit with
+          a self-contained breathing apparatus. He has since wished to descend into the crater again, carrying more equipment
+          for better profiling of the local biome.
+        </>
+      ),
+    },
+  },
 ]
 
 const jokes = [
