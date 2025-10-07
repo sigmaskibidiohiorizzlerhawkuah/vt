@@ -184,7 +184,7 @@ const topics = [
     ],
     description: (
       <>
-        <h2 className="text-base font-semibold mb-2 text-white">DARVAZA GAS CRATER</h2>
+        <h2 className="text-base font-semibold mb-2">DARVAZA GAS CRATER</h2>
         <span className="text-xs inline-block bg-muted px-2 py-1 rounded mr-2 mb-2">
           <strong>cavern</strong>: a large cave or chamber in a cave.
         </span>
@@ -392,9 +392,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="p-4 border-t text-center">
-          <p className="text-xs text-muted-foreground">© 2025 VT. All rights reserved.</p>
-        </div>
+        {/* Footer moved to the bottom of the page */}
       </div>
 
       {/* Second Column - SERIES */}
@@ -415,9 +413,6 @@ export default function Home() {
                 onClick={() => setSelectedTopic(topic)}
               />
             ))}
-            <div className="text-center pt-4">
-              <p className="text-xs text-muted-foreground">More To Come</p>
-            </div>
           </div>
         </ScrollArea>
       </div>
@@ -428,6 +423,10 @@ export default function Home() {
           <DetailPanel topic={selectedTopic} />
         </div>
       </div>
+      {/* Global Footer */}
+      <footer className="w-full border-t text-center py-3 mt-auto">
+        <p className="text-xs text-muted-foreground">© 2025 VT. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
