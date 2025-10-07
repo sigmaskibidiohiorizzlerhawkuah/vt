@@ -10,7 +10,6 @@ interface DetailPanelProps {
   topic: {
     id: string
     title: string
-    detailTitle?: string
     image: string
     description: string | React.ReactNode
     facts: Array<{
@@ -47,7 +46,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
         <EmiratesCarousel category={topic.category} readTime={topic.readTime} images={topic.carouselImages} labels={topic.carouselLabels} />
 
         <div>
-          <h1 className="text-2xl font-bold mb-3 text-balance">{topic.detailTitle ?? topic.title}</h1>
+          <h1 className="text-2xl font-bold mb-3 text-balance">{topic.title}</h1>
           <div className="text-muted-foreground leading-relaxed text-pretty">{topic.description}</div>
           <p className="text-xs text-muted-foreground mt-2">Published: {topic.publishDate}</p>
         </div>
@@ -73,8 +72,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
                 <img
                   src={topic.didYouKnow.image || "/placeholder.svg"}
                   alt="Instagram post screenshot"
-                  className="w-full max-w-sm md:max-w-md mx-auto rounded-lg shadow-lg object-cover object-center"
-                  style={{ maxHeight: 320 }}
+                  className="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 />
               </div>
             )}

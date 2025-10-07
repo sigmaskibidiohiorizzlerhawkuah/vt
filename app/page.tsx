@@ -163,25 +163,16 @@ const topics = [
   },
   {
     id: "gates-of-hell",
-    title: "GATES OF HELL! 😱",
-    detailTitle: "Gates Of Hell: DARVAZA GAS CRATER😶",
-    image: "/gates-of-hell.jpg",
+    title: "GATES OF HELL!😱",
+    image: "/placeholder.svg",
     category: ["Physical Geography", "Geology"],
     readTime: "3 min read",
     publishDate: "October 8, 2025",
     carouselImages: [
-      "/gates-of-hell-1.jpg",
-      "/gates-of-hell-2.jpg",
-      "/gates-of-hell-3.jpg",
-      "/mud-crater.jpg",
-      "/water-crater.jpg",
+      "/placeholder.svg",
     ],
     carouselLabels: [
-      "Darvaza Gas Crater at dusk",
-      "Gate of Hell night flames",
-      "Karakum Desert crater rim",
-      "Mud Crater (natural gas churning up mud)",
-      "Water Crater (gas bubbling through water)",
+      "Darvaza Gas Crater, Karakum Desert",
     ],
     description: (
       <>
@@ -218,7 +209,7 @@ const topics = [
         for over 50 years and has become a permanent feature of the desert landscape. There are no accurate records of the
         event, but the fact is that this gas cavern has been burning since then.
         <br />
-        <br />⇾ The flames that burn within the crater are created by the combustion of methane gas. <strong>Methane</strong> is an
+        <br />⇾ The flames that burn within the crater are created by the combustion of <strong>methane</strong> gas. Methane is an
         odorless and colorless gas that’s highly flammable, and it’s released naturally as a byproduct of the decomposition
         of organic matter. The methane in the Darvaza Gas Crater is thought to have been trapped in a natural gas pocket
         beneath the desert floor, and the drilling accident released it into the atmosphere.
@@ -264,7 +255,6 @@ const topics = [
       },
     ],
     didYouKnow: {
-      image: "/george.jpg",
       text: (
         <>
           In 2013, <strong>George Kourounis</strong> became the first person to set foot at the bottom of the crater; he was
