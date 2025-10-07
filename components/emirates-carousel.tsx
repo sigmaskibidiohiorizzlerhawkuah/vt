@@ -45,14 +45,21 @@ export function EmiratesCarousel({ category, readTime, images, labels }: Emirate
   const [currentIndex, setCurrentIndex] = useState(0)
   const [categoryIndex, setCategoryIndex] = useState(0)
 
+  // Advance slides based on the active images set; reset when images change
   useEffect(() => {
+    setCurrentIndex(0)
+    const slideCount = (images?.length ?? 0) > 0 ? images!.length : emirates.length
     const interval = setInterval(() => {
-      const slideCount = (images?.length ?? 0) > 0 ? images!.length : emirates.length
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slideCount)
-    }, 3000) // Change image every 3 seconds
-
+    }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [images?.length])
+
+  // Clamp index if images shrink to avoid undefined frames
+  useEffect(() => {
+    const slideCount = (images?.length ?? 0) > 0 ? images!.length : emirates.length
+    if (currentIndex >= slideCount) setCurrentIndex(0)
+  }, [images?.length, currentIndex])
 
   useEffect(() => {
     if (Array.isArray(category) && category.length > 1) {

@@ -164,15 +164,25 @@ const topics = [
   {
     id: "gates-of-hell",
     title: "GATES OF HELL!😱",
-    image: "/placeholder.svg",
+    image: "/gates-of-hell.jpg",
     category: ["Physical Geography", "Geology"],
     readTime: "3 min read",
     publishDate: "October 8, 2025",
     carouselImages: [
-      "/placeholder.svg",
+      "/gates-of-hell.jpg",
+      "/gates-of-hell-1.jpg",
+      "/gates-of-hell-2.jpg",
+      "/water-crater.jpg",
+      "/mud-crater.png",
+      "/george.jpg",
     ],
     carouselLabels: [
       "Darvaza Gas Crater, Karakum Desert",
+      "Darvaza Gas Crater (close-up)",
+      "Darvaza Gas Crater at night",
+      "Water Crater (gas bubbling through water)",
+      "Mud Crater (gas churning mud)",
+      "George Kourounis descent (2013)",
     ],
     description: (
       <>
