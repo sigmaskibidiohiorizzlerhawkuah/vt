@@ -10,6 +10,7 @@ interface DetailPanelProps {
   topic: {
     id: string
     title: string
+    detailTitle?: string
     image: string
     description: string | React.ReactNode
     facts: Array<{
@@ -46,7 +47,7 @@ export function DetailPanel({ topic }: DetailPanelProps) {
         <EmiratesCarousel category={topic.category} readTime={topic.readTime} images={topic.carouselImages} labels={topic.carouselLabels} />
 
         <div>
-          <h1 className="text-2xl font-bold mb-3 text-balance">{topic.title}</h1>
+          <h1 className="text-2xl font-bold mb-3 text-balance">{topic.detailTitle ?? topic.title}</h1>
           <div className="text-muted-foreground leading-relaxed text-pretty">{topic.description}</div>
           <p className="text-xs text-muted-foreground mt-2">Published: {topic.publishDate}</p>
         </div>

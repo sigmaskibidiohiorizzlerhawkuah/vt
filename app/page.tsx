@@ -163,7 +163,8 @@ const topics = [
   },
   {
     id: "gates-of-hell",
-    title: "GATES OF HELL!😱",
+    title: "GATES OF HELL! 😱",
+    detailTitle: "Gates Of Hell: DARVAZA GAS CRATER😶",
     image: "/placeholder.svg",
     category: ["Physical Geography", "Geology"],
     readTime: "3 min read",
@@ -209,7 +210,7 @@ const topics = [
         for over 50 years and has become a permanent feature of the desert landscape. There are no accurate records of the
         event, but the fact is that this gas cavern has been burning since then.
         <br />
-        <br />⇾ The flames that burn within the crater are created by the combustion of <strong>methane</strong> gas. Methane is an
+        <br />⇾ The flames that burn within the crater are created by the combustion of methane gas. <strong>Methane</strong> is an
         odorless and colorless gas that’s highly flammable, and it’s released naturally as a byproduct of the decomposition
         of organic matter. The methane in the Darvaza Gas Crater is thought to have been trapped in a natural gas pocket
         beneath the desert floor, and the drilling accident released it into the atmosphere.
