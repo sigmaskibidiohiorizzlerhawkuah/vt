@@ -77,13 +77,13 @@ export function EmiratesCarousel({ category, readTime, images, labels }: Emirate
           <img
             src={images[currentIndex] || "/placeholder.svg"}
             alt={labels?.[currentIndex] || "Slide"}
-            className="w-full h-40 sm:h-48 md:h-56 lg:h-60 xl:h-72 object-cover transition-opacity duration-500"
+            className="w-full h-40 sm:h-48 md:h-48 lg:h-48 xl:h-48 object-cover transition-opacity duration-500"
           />
         ) : (
           <img
             src={emirates[currentIndex].image || "/placeholder.svg"}
             alt={`${emirates[currentIndex].name} - UAE Emirate`}
-            className="w-full h-40 sm:h-48 md:h-56 lg:h-60 xl:h-72 object-cover transition-opacity duration-500"
+            className="w-full h-40 sm:h-48 md:h-48 lg:h-48 xl:h-48 object-cover transition-opacity duration-500"
           />
         )}
 
