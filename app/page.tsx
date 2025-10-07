@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { TopicCard } from "@/components/topic-card"
-import { DetailPanel } from "@/components/detail-panel"
+import DetailPanel from "@/components/detail-panel"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 const topics = [
