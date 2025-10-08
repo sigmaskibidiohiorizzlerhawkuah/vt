@@ -318,12 +318,27 @@ const pickupLines = [
   "Hey, how was heaven when you left it? ",
 ]
 
+const wiseManQuotes = [
+  "⇾ Beware of those I miss yu texts towards the end of the month.\nRent is coming up",
+  "⇾ Keep your friends close, but your enemies far away. They would kill you if they were closer.",
+  "⇾ It's better to have a fat ss than to be a fat ss.",
+  "⇾ If you can’t defeat them, defeat yourself so they cannot defeat you.",
+  "⇾ If they ghost you, thank them. Dead people shouldn’t be texting anyway.",
+  "⇾ Life is short — but your broke days will feel eternal.",
+  "⇾ Happiness costs nothing, but Wi-Fi still does. Choose wisely.",
+  "⇾ idol of idiot worshippers",
+  "⇾ If you can’t find the sunshine, just accept you’re the cloud",
+  "⇾ Never fight a fool in public; spectators might not tell who’s who.",
+  "⇾ The devil works hard, but “battery low” works harder.",
+]
+
 export default function Home() {
   const [selectedTopic, setSelectedTopic] = useState<(typeof topics)[0] | null>(null)
   const [currentJokeIndex, setCurrentJokeIndex] = useState(0)
 
   const isBloodFalls = selectedTopic?.id === "blood-falls"
-  const quotes = isBloodFalls ? pickupLines : jokes
+  const isGatesOfHell = selectedTopic?.id === "gates-of-hell"
+  const quotes = isBloodFalls ? pickupLines : isGatesOfHell ? wiseManQuotes : jokes
 
   useEffect(() => {
     setCurrentJokeIndex(0)
@@ -370,7 +385,7 @@ export default function Home() {
                 </div>
               ) : (
                 <>
-                  <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
+                  <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : isGatesOfHell ? "😏A WISE MAN ONCE SAID:" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
                   <div className="min-h-[120px] flex items-center justify-center">
                     <p className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out">
                       {quotes[currentJokeIndex]}
