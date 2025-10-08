@@ -71,7 +71,7 @@ export function EmiratesCarousel({ category, readTime, images, labels }: Emirate
   }, [category])
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <div className="relative overflow-hidden rounded-lg">
         {images && images.length > 0 ? (
           <img

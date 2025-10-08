@@ -14,7 +14,7 @@ export function TopicCard({ title, image, isSelected, onClick }: TopicCardProps)
   return (
     <Card
       className={cn(
-        "relative overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105",
+        "relative overflow-hidden cursor-pointer transition-all duration-200 sm:hover:scale-105",
         "h-32 bg-cover bg-center",
         isSelected && "ring-2 ring-primary",
       )}

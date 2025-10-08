@@ -337,7 +337,7 @@ export default function Home() {
   }, [quotes.length])
 
   return (
-    <div className="min-h-screen flex flex-col lg:h-screen lg:flex-row bg-background">
+    <div className="min-h-screen flex flex-col lg:h-screen lg:flex-row bg-background overflow-x-hidden">
       {/* First Column - VOCABULARY TODAY */}
       <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
         <div className="p-4 sm:p-6 border-b">
