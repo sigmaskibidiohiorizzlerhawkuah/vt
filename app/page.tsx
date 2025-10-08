@@ -334,6 +334,10 @@ const wiseManQuotes = [
 
 const wiseManFooterQuote = '"The role of a writer is not to say what we can all say, but what we are unable to say.😉" ~ Anais Nin'
 
+const INP_QUOTE = "Now many of u might be wondering what happened to Lamine Yamal!🤔\nWell...Nicki Nicole happened. Unam sayin'😊"
+
+wiseManQuotes.push(INP_QUOTE)
+
 export default function Home() {
   const [selectedTopic, setSelectedTopic] = useState<(typeof topics)[0] | null>(null)
   const [currentJokeIndex, setCurrentJokeIndex] = useState(0)
@@ -341,6 +345,7 @@ export default function Home() {
   const isBloodFalls = selectedTopic?.id === "blood-falls"
   const isGatesOfHell = selectedTopic?.id === "gates-of-hell"
   const quotes = isBloodFalls ? pickupLines : isGatesOfHell ? wiseManQuotes : jokes
+  const isINP = isGatesOfHell && quotes[currentJokeIndex] === INP_QUOTE
 
   useEffect(() => {
     setCurrentJokeIndex(0)
@@ -387,7 +392,7 @@ export default function Home() {
                 </div>
               ) : (
                 <>
-                  <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : isGatesOfHell ? "😏A WISE MAN ONCE SAID:" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
+                  <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : isGatesOfHell ? (isINP ? "🫢INP ONCE SAID" : "😏A WISE MAN ONCE SAID:") : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
                   <div className="min-h-[120px] flex items-center justify-center">
                     <div className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out text-center whitespace-pre-line">
                       {quotes[currentJokeIndex]}
