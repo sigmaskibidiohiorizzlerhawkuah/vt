@@ -319,18 +319,20 @@ const pickupLines = [
 ]
 
 const wiseManQuotes = [
-  "⇾ Beware of those I miss yu texts towards the end of the month.\nRent is coming up",
-  "⇾ Keep your friends close, but your enemies far away. They would kill you if they were closer.",
-  "⇾ It's better to have a fat ss than to be a fat ss.",
-  "⇾ If you can’t defeat them, defeat yourself so they cannot defeat you.",
-  "⇾ If they ghost you, thank them. Dead people shouldn’t be texting anyway.",
-  "⇾ Life is short — but your broke days will feel eternal.",
-  "⇾ Happiness costs nothing, but Wi-Fi still does. Choose wisely.",
-  "⇾ idol of idiot worshippers",
-  "⇾ If you can’t find the sunshine, just accept you’re the cloud",
-  "⇾ Never fight a fool in public; spectators might not tell who’s who.",
-  "⇾ The devil works hard, but “battery low” works harder.",
+  "Beware of those I miss yu texts towards the end of the month.\nRent is coming up",
+  "Keep your friends close, but your enemies far away. They would kill you if they were closer.",
+  "It's better to have a fat ss than to be a fat ss.",
+  "If you can’t defeat them, defeat yourself so they cannot defeat you.",
+  "If they ghost you, thank them. Dead people shouldn’t be texting anyway.",
+  "Life is short — but your broke days will feel eternal.",
+  "Happiness costs nothing, but Wi-Fi still does. Choose wisely.",
+  '"idol of idiot worshippers"',
+  "If you can’t find the sunshine, just accept you’re the cloud",
+  "Never fight a fool in public; spectators might not tell who’s who.",
+  "The devil works hard, but “battery low” works harder.",
 ]
+
+const wiseManFooterQuote = '"The role of a writer is not to say what we can all say, but what we are unable to say.😉" ~ Anais Nin'
 
 export default function Home() {
   const [selectedTopic, setSelectedTopic] = useState<(typeof topics)[0] | null>(null)
@@ -387,10 +389,15 @@ export default function Home() {
                 <>
                   <h3 className="font-medium mb-4">{isBloodFalls ? "Smooth Talk Collection - Pickup Lines😒" : isGatesOfHell ? "😏A WISE MAN ONCE SAID:" : "HAHAHA, sOo fUnNyYYyY…😒"}</h3>
                   <div className="min-h-[120px] flex items-center justify-center">
-                    <p className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out">
+                    <div className="text-sm text-pretty leading-relaxed transition-all duration-500 ease-in-out text-center whitespace-pre-line">
                       {quotes[currentJokeIndex]}
-                    </p>
+                    </div>
                   </div>
+                  {isGatesOfHell && (
+                    <div className="mt-4 pt-3 border-t text-xs text-muted-foreground text-pretty text-center">
+                      {wiseManFooterQuote}
+                    </div>
+                  )}
                   <div className="flex justify-center gap-1 mt-4">
                     {quotes.map((_, index) => (
                       <div
