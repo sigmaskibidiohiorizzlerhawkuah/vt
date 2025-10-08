@@ -337,9 +337,9 @@ export default function Home() {
   }, [quotes.length])
 
   return (
-    <div className="h-screen flex flex-col sm:flex-row bg-background">
+    <div className="min-h-screen flex flex-col lg:h-screen lg:flex-row bg-background">
       {/* First Column - VOCABULARY TODAY */}
-      <div className="w-full sm:w-80 border-b sm:border-b-0 sm:border-r bg-card flex flex-col">
+      <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -392,13 +392,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="p-4 border-t text-center">
+        <div className="hidden lg:block p-4 border-t text-center">
           <p className="text-xs text-muted-foreground">© 2025 VT. All rights reserved.</p>
         </div>
       </div>
 
       {/* Second Column - SERIES */}
-      <div className="w-full sm:w-96 border-b sm:border-b-0 sm:border-r bg-card flex flex-col">
+      <div className="w-full lg:w-96 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <h2 className="text-xl font-semibold">SERIES</h2>
           <p className="text-sm text-muted-foreground mt-1">All featured topics</p>
@@ -425,6 +425,11 @@ export default function Home() {
           <DetailPanel topic={selectedTopic} />
         </div>
       </div>
+      
+      {/* Mobile Footer - only visible on smaller screens */}
+      <footer className="lg:hidden w-full border-t text-center py-3 mt-auto">
+        <p className="text-xs text-muted-foreground">© 2025 VT. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
