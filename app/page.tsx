@@ -337,9 +337,9 @@ export default function Home() {
   }, [quotes.length])
 
   return (
-    <div className="h-screen flex bg-background">
+    <div className="h-screen flex flex-col sm:flex-row bg-background">
       {/* First Column - VOCABULARY TODAY */}
-      <div className="w-80 border-r bg-card flex flex-col">
+      <div className="w-full sm:w-80 border-b sm:border-b-0 sm:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -398,7 +398,7 @@ export default function Home() {
       </div>
 
       {/* Second Column - SERIES */}
-      <div className="w-96 border-r bg-card flex flex-col">
+      <div className="w-full sm:w-96 border-b sm:border-b-0 sm:border-r bg-card flex flex-col">
         <div className="p-6 border-b">
           <h2 className="text-xl font-semibold">SERIES</h2>
           <p className="text-sm text-muted-foreground mt-1">All featured topics</p>
@@ -420,7 +420,7 @@ export default function Home() {
       </div>
 
       {/* Third Column - Detail Panel */}
-      <div className="flex-1 bg-background">
+      <div className="flex-1 bg-background w-full">
         <div className="h-full">
           <DetailPanel topic={selectedTopic} />
         </div>
