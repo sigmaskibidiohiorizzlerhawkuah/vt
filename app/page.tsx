@@ -340,7 +340,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col lg:h-screen lg:flex-row bg-background">
       {/* First Column - VOCABULARY TODAY */}
       <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
-        <div className="p-6 border-b">
+        <div className="p-4 sm:p-6 border-b">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <button
@@ -356,13 +356,13 @@ export default function Home() {
               <ThemeToggle />
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-balance">VOCABULARY TODAY</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-balance">VOCABULARY TODAY</h1>
           <p className="text-sm text-muted-foreground mt-2 text-pretty">Expand your mind, one word at a time.</p>
         </div>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4 sm:p-6">
           <div className="space-y-4">
-            <div className="text-center p-8 text-muted-foreground">
+            <div className="text-center p-4 sm:p-8 text-muted-foreground">
               {!selectedTopic ? (
                 <div className="py-6">
                   <div className="text-5xl mb-3 animate-bounce">👋🏽</div>
@@ -399,13 +399,13 @@ export default function Home() {
 
       {/* Second Column - SERIES */}
       <div className="w-full lg:w-96 border-b lg:border-b-0 lg:border-r bg-card flex flex-col">
-        <div className="p-6 border-b">
-          <h2 className="text-xl font-semibold">SERIES</h2>
+        <div className="p-4 sm:p-6 border-b">
+          <h2 className="text-lg sm:text-xl font-semibold">SERIES</h2>
           <p className="text-sm text-muted-foreground mt-1">All featured topics</p>
         </div>
 
         <ScrollArea className="flex-1">
-          <div className="p-6 space-y-4">
+          <div className="p-4 sm:p-6 space-y-4">
             {topics.map((topic) => (
               <TopicCard
                 key={topic.id}

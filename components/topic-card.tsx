@@ -23,7 +23,7 @@ export function TopicCard({ title, image, isSelected, onClick }: TopicCardProps)
     >
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative h-full flex items-end p-4">
-        <h3 className="text-white font-semibold text-lg text-balance">{title}</h3>
+        <h3 className="text-white font-semibold text-base sm:text-lg text-balance">{title}</h3>
       </div>
     </Card>
   )

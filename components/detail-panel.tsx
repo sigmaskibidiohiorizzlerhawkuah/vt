@@ -42,11 +42,11 @@ export default function DetailPanel({ topic }: DetailPanelProps) {
 
   return (
     <ScrollArea className="h-full">
-      <div className="p-6 space-y-6">
+      <div className="p-4 sm:p-6 space-y-6">
         <EmiratesCarousel category={topic.category} readTime={topic.readTime} images={topic.carouselImages} labels={topic.carouselLabels} />
 
         <div>
-          <h1 className="text-2xl font-bold mb-3 text-balance">{topic.title}</h1>
+          <h1 className="text-xl sm:text-2xl font-bold mb-3 text-balance">{topic.title}</h1>
           <div className="text-muted-foreground leading-relaxed text-pretty">{topic.description}</div>
           <p className="text-xs text-muted-foreground mt-2">Published: {topic.publishDate}</p>
         </div>
