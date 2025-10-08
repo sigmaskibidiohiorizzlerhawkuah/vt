@@ -118,7 +118,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid payload" }, { status: 400 })
     }
 
-    const { id: guestId } = await getOrCreateGuest()
+    const { id: guestId, token } = await getOrCreateGuest()
     const article = await getOrCreateArticle(articleSlug, "DUBAI AS AN EMIRATE, NOT A COUNTRY! 😅")
     const anonUsername = await getOrCreateAnonUsername(guestId, article.id)
 
@@ -143,7 +143,9 @@ export async function POST(req: Request) {
       parentCommenterName: parentId ? await getParentCommenterName(parentId) : undefined,
     }).catch(console.error)
 
-    return NextResponse.json({ comment, username: anonUsername }, { status: 201 })
+    // include creator flag so the UI can render the badge optimistically
+    const isCreator = !!process.env.ADMIN_GUEST_TOKEN && token === process.env.ADMIN_GUEST_TOKEN
+    return NextResponse.json({ comment: { ...comment, isCreator }, username: anonUsername }, { status: 201 })
   } catch (error) {
     console.error("Error creating comment:", error)
     return NextResponse.json({ error: "Server error" }, { status: 500 })
